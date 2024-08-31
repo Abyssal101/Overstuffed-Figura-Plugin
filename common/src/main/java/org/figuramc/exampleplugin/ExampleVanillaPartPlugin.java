@@ -20,7 +20,7 @@ import java.util.function.Function;
 public class ExampleVanillaPartPlugin implements FiguraVanillaPart {
     @Override
     public String getID() {
-        return ExamplePlugin.PLUGIN_ID;
+        return OverstuffedFiguraPlugin.PLUGIN_ID;
     }
 
     /**

@@ -8,8 +8,6 @@ import org.figuramc.figura.lua.api.event.LuaEvent;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
-import java.util.function.Function;
 
 /**
  * Example Event Plugin
@@ -23,7 +21,7 @@ public class ExampleEventPlugin implements FiguraEvent {
     public static LuaEvent EXAMPLE = new LuaEvent();
     @Override
     public String getID() {
-        return ExamplePlugin.PLUGIN_ID;
+        return OverstuffedFiguraPlugin.PLUGIN_ID;
     }
 
     /**

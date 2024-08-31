@@ -22,7 +22,7 @@ public class ExamplePermissionsPlugin implements FiguraPermissions {
     public static final Permissions EXAMPLE_PERMISSION = new Permissions("example_permission", 0,0,0,1,1);
     @Override
     public String getTitle() {
-        return ExamplePlugin.PLUGIN_ID;
+        return OverstuffedFiguraPlugin.PLUGIN_ID;
     }
 
     @Override

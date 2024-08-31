@@ -19,7 +19,7 @@
       "org.figuramc.exampleplugin.fabric.ExamplePluginFabric"
     ],
     "figura_api": [
-      "org.figuramc.exampleplugin.ExamplePlugin"
+      "org.figuramc.exampleplugin.OverstuffedFiguraPlugin"
     ],
     "figura_permissions": [
       "org.figuramc.exampleplugin.ExamplePermissionsPlugin"

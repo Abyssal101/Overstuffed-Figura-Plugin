@@ -1,7 +1,7 @@
 package org.figuramc.exampleplugin.fabric;
 
 import net.fabricmc.api.ModInitializer;
-import org.figuramc.exampleplugin.ExamplePlugin;
+import org.figuramc.exampleplugin.OverstuffedFiguraPlugin;
 
 /**
  * A mod class is not technically needed for Fabric to load the Plugin, but it's still nice to have.
@@ -9,6 +9,6 @@ import org.figuramc.exampleplugin.ExamplePlugin;
 public class ExamplePluginFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        ExamplePlugin.init();
+        OverstuffedFiguraPlugin.init();
     }
 }

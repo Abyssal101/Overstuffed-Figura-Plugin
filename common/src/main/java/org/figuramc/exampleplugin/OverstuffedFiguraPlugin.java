@@ -21,14 +21,14 @@ import java.util.List;
  */
 @FiguraAPIPlugin
 @LuaWhitelist
-public class ExamplePlugin implements FiguraAPI {
+public class OverstuffedFiguraPlugin implements FiguraAPI {
     public static final String PLUGIN_ID = "examplefiguraplugin";
     public static final Logger LOGGER = LoggerFactory.getLogger(PLUGIN_ID);
     private Avatar avatar;
 
-    public ExamplePlugin() {
+    public OverstuffedFiguraPlugin() {
     }
-    public ExamplePlugin(Avatar avatar) {
+    public OverstuffedFiguraPlugin(Avatar avatar) {
         this.avatar = avatar;
     }
 
@@ -41,7 +41,7 @@ public class ExamplePlugin implements FiguraAPI {
 
     @Override
     public FiguraAPI build(Avatar avatar) {
-        return new ExamplePlugin(avatar);
+        return new OverstuffedFiguraPlugin(avatar);
     }
 
     @Override
@@ -72,8 +72,7 @@ public class ExamplePlugin implements FiguraAPI {
     }
 
     public static final Class<?>[] EXAMPLE_PLUGIN_CLASSES = new Class[] {
-            ExamplePlugin.class,
-            ExampleScreen.class
+            OverstuffedFiguraPlugin.class,
     };
 
 }
