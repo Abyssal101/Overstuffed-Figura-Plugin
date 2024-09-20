@@ -6,6 +6,8 @@
   "client": [
   ],
   "mixins": [
+    "EventsAPIMixin"
+
   ],
   "injectors": {
     "defaultRequire": 1

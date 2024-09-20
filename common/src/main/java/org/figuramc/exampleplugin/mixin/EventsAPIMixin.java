@@ -21,17 +21,33 @@ public class EventsAPIMixin implements EventsAPIAccess {
     @Shadow
     @Final
     private Map<String, LuaEvent> events;
+
     @Unique
     @LuaWhitelist
-    @LuaFieldDoc("events.stateChanged")
-    public LuaEvent STATE_CHANGED; // gets translated to event.stateChanged in lua
+    @LuaFieldDoc("events.overstuffed_stuffed_bar")
+    public LuaEvent OVERSTUFFED_STUFFED_BAR_UPDATE; // gets translated to overstuffed_stuffed_bar in lua
+
+    @Unique
+    @LuaWhitelist
+    @LuaFieldDoc("events.overstuffed_weight_bar")
+    public LuaEvent OVERSTUFFED_WEIGHT_BAR_UPDATE; // gets translated to overstuffed_weight_bar in lua
+
     @Inject(method = "<init>", at = @At("RETURN"))
     void a(CallbackInfo ci) {
-        STATE_CHANGED = new LuaEvent();
-        events.put("STATE_CHANGED", STATE_CHANGED);
+        OVERSTUFFED_STUFFED_BAR_UPDATE = new LuaEvent();
+        OVERSTUFFED_WEIGHT_BAR_UPDATE = new LuaEvent();
+
+        events.put("OVERSTUFFED_STUFFED_BAR_UPDATE", OVERSTUFFED_STUFFED_BAR_UPDATE);
+        events.put("OVERSTUFFED_WEIGHT_BAR_UPDATE", OVERSTUFFED_WEIGHT_BAR_UPDATE);
+
     }
     @Override
-    public LuaEvent Overstuffed$getValueEvent() {
-        return STATE_CHANGED;
+    public LuaEvent Overstuffed$getStuffedValueEvent() {
+        return OVERSTUFFED_STUFFED_BAR_UPDATE;
     }
+    @Override
+    public LuaEvent Overstuffed$getWeightValueEvent() {
+        return OVERSTUFFED_WEIGHT_BAR_UPDATE;
+    }
+
 }

@@ -1,6 +1,6 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-	id "dev.architectury.loom" version "1.2-SNAPSHOT" apply false
+	id "dev.architectury.loom" version "1.3-SNAPSHOT" apply false
 	id "io.github.juuxel.loom-vineflower" version "1.+" apply false
     id "io.github.pacifistmc.forgix" version "1.2.6"
 }
@@ -37,6 +37,7 @@ subprojects {
 			mappings("org.quiltmc:quilt-mappings:$minecraft_version+build.$mappings:intermediary-v2")
 			officialMojangMappings()
 		}
+        implementation files('./libs/Overstuffed-1.0-1.20.1.jar')
 
 
     }

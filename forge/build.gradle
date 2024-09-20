@@ -29,19 +29,32 @@ configurations {
 
 repositories {
     maven { url 'https://jitpack.io' }
+
+    maven {
+        name = "tom5454 maven"
+        url = "https://raw.githubusercontent.com/tom5454/maven/main"
+        }
 }
 
 dependencies {
     // Libraries
     // Figura already ships these libraries during runtime, they're only needed as compile dependencies
-    compileOnly("com.github.FiguraMC.luaj:luaj-core:$luaj-figura")
-    compileOnly("com.github.FiguraMC.luaj:luaj-jse:$luaj-figura")
-    compileOnly("com.neovisionaries:nv-websocket-client:$nv_websocket")
+    forgeRuntimeLibrary("com.github.FiguraMC.luaj:luaj-core:$luaj-figura")
+    forgeRuntimeLibrary("com.github.FiguraMC.luaj:luaj-jse:$luaj-figura")
+    forgeRuntimeLibrary("com.neovisionaries:nv-websocket-client:$nv_websocket")
 
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
 
     // Figura forge
     modImplementation("org.figuramc:figura-forge:$figura_version")
+
+    compileOnly "com.tom5454.cpm:CustomPlayerModels-API:${project.cpm_api_version}"
+    modImplementation  "com.tom5454.cpm:CustomPlayerModels-${project.cpm_mc_version}:${project.cpm_runtime_version}"
+
+    modImplementation  files('./../common/libs/Overstuffed-1.0-1.20.1.jar')
+//    include files('./../common/libs/Overstuffed-1.0-1.20.1.jar')
+//
+
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
@@ -106,6 +119,7 @@ publishing {
 
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
+        // Add repositories to publish to here
+
     }
 }

@@ -6,7 +6,9 @@
   "client": [
   ],
   "mixins": [
-    "EventsAPIMixin"
+    "EventsAPIMixin",
+    "StuffedBarDataMixin",
+    "WeightBarDataMixin"
   ],
   "injectors": {
     "defaultRequire": 1
