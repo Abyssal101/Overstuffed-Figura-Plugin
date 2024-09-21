@@ -22,7 +22,7 @@ import java.util.List;
 @FiguraAPIPlugin
 @LuaWhitelist
 public class OverstuffedFiguraPlugin implements FiguraAPI {
-    public static final String PLUGIN_ID = "examplefiguraplugin";
+    public static final String PLUGIN_ID = "overstuffedfiguraplugin";
     public static final Logger LOGGER = LoggerFactory.getLogger(PLUGIN_ID);
     private Avatar avatar;
 
